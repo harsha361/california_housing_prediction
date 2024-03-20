@@ -1,0 +1,2 @@
+# california_housing_prediction
+californiahosusing prices prediction using linear regression
