@@ -6,17 +6,16 @@ on:
       - main
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v2
 
       - name: Set up Render CLI
-        uses: render-com/github-action@v1
-        with:
-          renderToken: ${{ secrets.RENDER_TOKEN }}
+        run: |
+          curl -sSL https://render.com/install.sh | sh
 
       - name: Deploy to Render
         run: render deploy -- --branch main
+
